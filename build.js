@@ -68,7 +68,7 @@ function applyLayout(body, meta) {
 const biens = JSON.parse(read(ROOT, 'data', 'biens.json'))
 const publies = biens.filter((b) => b.publie !== false)
 
-const euro = (n) => (typeof n === 'number' ? `${n} €` : null)
+const euro = (n) => (typeof n === 'number' ? `${n}&nbsp;€` : null)
 
 function carteBien(b) {
   const photo = b.photos?.[0]
@@ -114,8 +114,8 @@ function pageBien(b) {
     ['Capacité', `${esc(b.capacite)} voyageurs`],
     ['Chambres', esc(b.chambres)],
     ['Salles de bain', esc(b.sallesDeBain)],
-    ['Surface', b.surface ? `${esc(b.surface)} m²` : null],
-    ['Tarif indicatif', euro(b.tarifNuitBasse) ? `à partir de ${euro(b.tarifNuitBasse)} / nuit` : null],
+    ['Surface', b.surface ? `${esc(b.surface)}&nbsp;m²` : null],
+    ['Tarif indicatif', euro(b.tarifNuitBasse) ? `dès ${euro(b.tarifNuitBasse)}<span class="bien-chiffre__unite"> / nuit</span>` : null],
   ]
     .filter(([, v]) => v)
     .map(([k, v]) => `<div class="bien-chiffre"><dt>${k}</dt><dd>${v}</dd></div>`)
