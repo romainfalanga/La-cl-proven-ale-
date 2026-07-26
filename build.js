@@ -21,6 +21,14 @@ const DIST = join(ROOT, 'dist')
 const SITE_URL = process.env.URL || 'https://lacleprovencale.netlify.app'
 const SITE_NAME = 'La Clé Provençale'
 
+/**
+ * Le site reste en préparation tant que SITE_PUBLIC ne vaut pas "true".
+ * Dans cet état il est déployé et consultable, mais désindexé : les moteurs
+ * n'iront pas référencer des mentions légales à trous ni des biens d'exemple.
+ * Passer la variable à "true" dans Netlify le jour de l'ouverture au public.
+ */
+const EN_PREPARATION = process.env.SITE_PUBLIC !== 'true'
+
 const read = (...p) => readFileSync(join(...p), 'utf8')
 
 /** Échappe le HTML. Toute donnée issue de data/biens.json passe par ici. */
@@ -53,6 +61,10 @@ function applyLayout(body, meta) {
     : header
 
   return layout
+    .replaceAll(
+      '{{ROBOTS}}',
+      EN_PREPARATION ? '\n  <meta name="robots" content="noindex, nofollow">' : '',
+    )
     .replaceAll('{{TITLE}}', esc(meta.title || SITE_NAME))
     .replaceAll('{{DESCRIPTION}}', esc(meta.description || ''))
     .replaceAll('{{CANONICAL}}', SITE_URL + (meta.path || '/'))
@@ -79,7 +91,9 @@ function carteBien(b) {
   return `
       <article class="bien-card">
         <a class="bien-card__link" href="/biens/${esc(b.slug)}/">
-          <div class="bien-card__media">${visuel}</div>
+          <div class="bien-card__media">${visuel}${
+            b.source === 'exemple' ? '<span class="bien-card__exemple">Exemple de présentation</span>' : ''
+          }</div>
           <div class="bien-card__body">
             <p class="eyebrow">${esc(b.commune)}</p>
             <h3 class="bien-card__titre">${esc(b.titre)}</h3>
@@ -121,7 +135,19 @@ function pageBien(b) {
     .map(([k, v]) => `<div class="bien-chiffre"><dt>${k}</dt><dd>${v}</dd></div>`)
     .join('\n')
 
+  // Un bien d'exemple ne doit jamais pouvoir passer pour un bien réellement
+  // géré : la mention est portée par la page elle-même, pas par une note interne.
+  const avertissement =
+    b.source === 'exemple'
+      ? `<div class="container"><p class="avis-exemple">
+           <strong>Exemple de présentation.</strong> Ce bien illustre la mise en page d'une fiche.
+           Il ne fait pas partie des biens gérés par La Clé Provençale : le descriptif, les tarifs
+           et les photographies sont fictifs.
+         </p></div>`
+      : ''
+
   const body = template
+    .replaceAll('{{AVERTISSEMENT}}', avertissement)
     .replaceAll('{{TITRE}}', esc(b.titre))
     .replaceAll('{{COMMUNE}}', esc(b.commune))
     .replaceAll('{{TYPE}}', esc(b.type))
@@ -153,6 +179,16 @@ for (const file of readdirSync(pagesDir).filter((f) => f.endsWith('.html'))) {
 
   const rendu = body
     .replaceAll('{{OLIVIER}}', olivierSvg)
+    .replaceAll(
+      '{{AVIS_EXEMPLES}}',
+      publies.some((b) => b.source === 'exemple')
+        ? `<p class="avis-exemple">
+             <strong>Ces fiches sont des exemples de présentation.</strong> Elles montrent la mise en
+             page d'un bien et ne correspondent à aucun logement réellement géré à ce jour : titres,
+             descriptifs, tarifs et photographies sont fictifs.
+           </p>`
+        : '',
+    )
     .replaceAll(
       '{{GRILLE_BIENS}}',
       publies.length
@@ -199,6 +235,11 @@ ${urls.map((u) => `  <url><loc>${SITE_URL}${u}</loc></url>`).join('\n')}
 </urlset>
 `,
 )
-writeFileSync(join(DIST, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`)
+writeFileSync(
+  join(DIST, 'robots.txt'),
+  EN_PREPARATION
+    ? `# Site en préparation : indexation refusée tant que SITE_PUBLIC != "true".\nUser-agent: *\nDisallow: /\n`
+    : `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`,
+)
 
 console.log(`✓ ${readdirSync(pagesDir).length} pages + ${publies.length} biens générés dans dist/`)

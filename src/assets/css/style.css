@@ -766,6 +766,33 @@ body.is-locked { overflow: hidden; }
 
 .biens-vide { color: var(--ink-muted); }
 
+/* Mention d'exemple : doit être lisible, pas discrète. */
+.avis-exemple {
+  margin-bottom: var(--space-lg);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--lavande-100);
+  border-left: 3px solid var(--lavande-500);
+  border-radius: var(--radius-md);
+  color: var(--lavande-700);
+  font-size: var(--text-sm);
+  line-height: 1.65;
+}
+.avis-exemple strong { color: var(--lavande-700); }
+
+.bien-card__exemple {
+  position: absolute;
+  top: var(--space-xs);
+  left: var(--space-xs);
+  padding: 0.25rem 0.7rem;
+  background: rgba(255, 255, 255, 0.94);
+  border-radius: var(--radius-full);
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--lavande-700);
+}
+
 /* Page d'un bien */
 .bien-hero { padding-top: calc(var(--header-h) + var(--space-xl)); padding-bottom: var(--space-lg); }
 .bien-hero__titre { font-size: var(--text-3xl); }
