@@ -1,0 +1,74 @@
+[
+  {
+    "slug": "villa-des-oliviers",
+    "titre": "Villa des Oliviers",
+    "commune": "Bandol",
+    "type": "Villa",
+    "capacite": 8,
+    "chambres": 4,
+    "sallesDeBain": 3,
+    "surface": 180,
+    "tarifNuitBasse": 290,
+    "description": "Villa contemporaine posée sur une restanque plantée d'oliviers, à dix minutes du port. Les pièces de vie s'ouvrent de plain-pied sur une terrasse orientée plein sud et sur une piscine chauffée. Un lieu pensé pour les longues tablées de fin de journée, quand la chaleur retombe.",
+    "equipements": [
+      "Piscine chauffée",
+      "Climatisation réversible",
+      "Cuisine d'été équipée",
+      "Wi-Fi fibre",
+      "Parking privatif 3 véhicules",
+      "Vue mer partielle"
+    ],
+    "photos": [],
+    "publie": true,
+    "source": "exemple",
+    "ajouteLe": "2026-07-26"
+  },
+  {
+    "slug": "mas-de-la-lavande",
+    "titre": "Mas de la Lavande",
+    "commune": "Le Castellet",
+    "type": "Mas / bastide",
+    "capacite": 10,
+    "chambres": 5,
+    "sallesDeBain": 3,
+    "surface": 240,
+    "tarifNuitBasse": 340,
+    "description": "Ancien mas restauré en pierres apparentes, au milieu des vignes du Castellet. Tomettes d'origine, cheminée en pierre de Cassis et vaste cour ombragée par un platane centenaire. La maison se prête aussi bien aux réunions de famille qu'aux séjours au calme, hors saison.",
+    "equipements": [
+      "Piscine 12 × 5 m",
+      "Grande cour ombragée",
+      "Cheminée",
+      "Cuisine professionnelle",
+      "Boulodrome",
+      "Terrain clos 4 000 m²"
+    ],
+    "photos": [],
+    "publie": true,
+    "source": "exemple",
+    "ajouteLe": "2026-07-26"
+  },
+  {
+    "slug": "maison-du-port",
+    "titre": "Maison du Port",
+    "commune": "Saint-Cyr-sur-Mer",
+    "type": "Maison",
+    "capacite": 6,
+    "chambres": 3,
+    "sallesDeBain": 2,
+    "surface": 110,
+    "tarifNuitBasse": 210,
+    "description": "Maison de village entièrement rénovée, à quelques rues de la plage des Lecques. Trois niveaux lumineux, une terrasse sur le toit avec vue sur les toits et la baie, et tous les commerces accessibles à pied. L'adresse idéale pour un séjour sans voiture.",
+    "equipements": [
+      "Terrasse sur le toit",
+      "Climatisation",
+      "À 400 m de la plage",
+      "Wi-Fi fibre",
+      "Lave-linge et sèche-linge",
+      "Commerces à pied"
+    ],
+    "photos": [],
+    "publie": true,
+    "source": "exemple",
+    "ajouteLe": "2026-07-26"
+  }
+]

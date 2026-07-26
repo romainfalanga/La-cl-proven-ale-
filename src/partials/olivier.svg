@@ -1,0 +1,30 @@
+<svg class="motif-olivier" viewBox="0 0 260 300" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+  <defs>
+    <path id="feuille" d="M0 0C11-10 30-12 45-4 30 7 11 9 0 0Z" fill="currentColor"/>
+  </defs>
+  <path d="M130 296C130 236 126 176 128 122C129 88 134 56 142 26" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+  <path d="M128 150C112 132 92 122 68 118" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+  <path d="M129 196C146 180 166 172 190 170" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+  <path d="M131 246C116 234 98 228 78 227" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+
+  <use href="#feuille" transform="translate(126 108) rotate(-118)"/>
+  <use href="#feuille" transform="translate(133 112) rotate(-52)"/>
+  <use href="#feuille" transform="translate(66 116) rotate(196)"/>
+  <use href="#feuille" transform="translate(70 122) rotate(150)"/>
+  <use href="#feuille" transform="translate(96 128) rotate(172)"/>
+  <use href="#feuille" transform="translate(124 158) rotate(-134)"/>
+  <use href="#feuille" transform="translate(192 168) rotate(-16)"/>
+  <use href="#feuille" transform="translate(188 176) rotate(30)"/>
+  <use href="#feuille" transform="translate(160 168) rotate(-4)"/>
+  <use href="#feuille" transform="translate(133 204) rotate(-44)"/>
+  <use href="#feuille" transform="translate(76 224) rotate(200)"/>
+  <use href="#feuille" transform="translate(80 232) rotate(154)"/>
+  <use href="#feuille" transform="translate(106 238) rotate(176)"/>
+  <use href="#feuille" transform="translate(129 262) rotate(-126)"/>
+  <use href="#feuille" transform="translate(140 44) rotate(-76)"/>
+  <use href="#feuille" transform="translate(136 58) rotate(-104)"/>
+
+  <circle cx="112" cy="178" r="7.5" fill="currentColor" opacity="0.55"/>
+  <circle cx="152" cy="226" r="6.5" fill="currentColor" opacity="0.45"/>
+  <circle cx="146" cy="140" r="6" fill="currentColor" opacity="0.5"/>
+</svg>

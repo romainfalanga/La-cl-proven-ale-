@@ -1,0 +1,42 @@
+<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="La Clé Provençale">
+  <defs>
+    <path id="f" d="M0 0C5.5-5 15-6 22.5-2 15 3.5 5.5 4.5 0 0Z" fill="#6E8A93"/>
+  </defs>
+
+  <!-- Cercle sauge -->
+  <circle cx="60" cy="60" r="52" fill="none" stroke="#6E8A93" stroke-width="1.8"/>
+  <!-- Arc doré, en contrepoint -->
+  <path d="M60 4a56 56 0 0 1 47.4 86" fill="none" stroke="#C2A46A" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Rameau d'olivier -->
+  <path d="M60 100C60 78 58 58 60 42" stroke="#6E8A93" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <path d="M60 66C51 57 41 52 30 51" stroke="#6E8A93" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+  <path d="M60 84C68 76 78 72 90 71" stroke="#6E8A93" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+  <use href="#f" transform="translate(29 50) rotate(196)"/>
+  <use href="#f" transform="translate(31 55) rotate(148)"/>
+  <use href="#f" transform="translate(45 58) rotate(174)"/>
+  <use href="#f" transform="translate(58 70) rotate(-132)"/>
+  <use href="#f" transform="translate(91 69) rotate(-18)"/>
+  <use href="#f" transform="translate(89 74) rotate(28)"/>
+  <use href="#f" transform="translate(75 72) rotate(-4)"/>
+  <use href="#f" transform="translate(58 88) rotate(-128)"/>
+  <use href="#f" transform="translate(59 46) rotate(-74)"/>
+  <use href="#f" transform="translate(57 50) rotate(-108)"/>
+  <circle cx="52" cy="77" r="3.4" fill="#6E8A93" opacity="0.5"/>
+  <circle cx="68" cy="60" r="3" fill="#6E8A93" opacity="0.45"/>
+
+  <!-- Épis de lavande -->
+  <g stroke="#7B5FA8" stroke-width="1.2" stroke-linecap="round" fill="none">
+    <path d="M78 96C78 86 79 76 80 68"/>
+    <path d="M86 96C86 88 87 79 88 72"/>
+    <path d="M94 96C94 89 95 82 96 76"/>
+  </g>
+  <g fill="#7B5FA8">
+    <ellipse cx="80" cy="64" rx="3" ry="6.5"/>
+    <ellipse cx="80" cy="55" rx="2.4" ry="5"/>
+    <ellipse cx="88" cy="68" rx="2.8" ry="6"/>
+    <ellipse cx="88" cy="60" rx="2.2" ry="4.6"/>
+    <ellipse cx="96" cy="72" rx="2.6" ry="5.4"/>
+    <ellipse cx="96" cy="65" rx="2" ry="4.2"/>
+  </g>
+</svg>

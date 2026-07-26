@@ -1,0 +1,56 @@
+  <section class="bien-hero">
+    <div class="container">
+      <p class="eyebrow">{{TYPE}} · {{COMMUNE}}</p>
+      <h1 class="bien-hero__titre">{{TITRE}}</h1>
+      <hr class="filet">
+    </div>
+  </section>
+
+  <section style="padding-bottom: var(--space-xl);">
+    <div class="container">
+      <div class="bien-galerie">
+        {{GALERIE}}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="bien-layout">
+
+        <div>
+          <dl class="bien-chiffres" style="margin-bottom: var(--space-xl);">
+            {{CHIFFRES}}
+          </dl>
+
+          <div class="prose">
+            <h2>Le bien</h2>
+            <p>{{DESCRIPTION}}</p>
+
+            <h2>Équipements</h2>
+            <ul class="liste-lavande">
+              {{EQUIPEMENTS}}
+            </ul>
+          </div>
+        </div>
+
+        <aside class="bien-aside">
+          <p class="eyebrow">Géré par La Clé Provençale</p>
+          <h2 class="card__title">Un bien, un interlocuteur</h2>
+          <p class="card__text" style="margin-bottom: var(--space-md);">
+            Accueil des voyageurs, ménage, linge, entretien et suivi des réservations&nbsp;:
+            ce bien est pris en charge intégralement par notre équipe.
+          </p>
+          <a class="btn btn--primary btn--block" href="/contact/">Confier mon bien</a>
+          <p class="field__hint" style="margin-top: var(--space-sm); text-align: center;">
+            Vous possédez une maison similaire&nbsp;? Parlons-en.
+          </p>
+        </aside>
+
+      </div>
+
+      <p style="margin-top: var(--space-xl);">
+        <a class="bien-card__cta" href="/nos-biens/">Retour à tous nos biens</a>
+      </p>
+    </div>
+  </section>

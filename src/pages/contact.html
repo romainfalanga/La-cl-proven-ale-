@@ -1,0 +1,136 @@
+<!--meta
+{
+  "title": "Contact — Faire étudier mon bien | La Clé Provençale",
+  "description": "Décrivez-nous votre maison ou votre villa en deux minutes. Nous revenons vers vous sous 24 heures ouvrées avec une première analyse de son potentiel locatif, sans engagement.",
+  "nav": "contact",
+  "path": "/contact"
+}
+-->
+  <section class="section" style="padding-top: calc(var(--header-h) + var(--space-xl));">
+    <div class="container">
+      <div class="grid grid--2" style="gap: var(--space-xl); align-items: start;">
+
+        <div class="reveal">
+          <p class="eyebrow">Parlons de votre bien</p>
+          <h1 class="section-title">Deux minutes suffisent</h1>
+          <hr class="filet">
+          <p class="section-lead">
+            Nous avons besoin de peu de choses pour vous répondre utilement&nbsp;: savoir
+            où se trouve votre maison, ce qu'elle est, et où vous en êtes aujourd'hui.
+            Le reste, nous en parlerons de vive voix.
+          </p>
+
+          <ul class="liste-lavande" style="margin-top: var(--space-lg);">
+            <li>Réponse sous 24&nbsp;heures ouvrées, par une personne, pas par un robot.</li>
+            <li>Une estimation honnête du potentiel de votre bien, même si elle ne nous arrange pas.</li>
+            <li>Aucune relance commerciale insistante. Vous nous rappelez quand vous le souhaitez.</li>
+          </ul>
+
+          <div class="card" style="margin-top: var(--space-xl);">
+            <h2 class="card__title">Vous préférez écrire directement&nbsp;?</h2>
+            <p class="card__text">
+              <a href="mailto:contact@lacleprovencale.fr" style="color: var(--sage-700); text-decoration: underline;">contact@lacleprovencale.fr</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="form-wrap reveal">
+          <div class="form__status" id="form-statut" hidden></div>
+
+          <form class="form" id="form-contact" novalidate>
+            <div class="form__row form__row--2">
+              <div class="field">
+                <label for="nom">Nom et prénom <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="nom" name="nom" autocomplete="name" required maxlength="120">
+                <p class="field__error" id="erreur-nom" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <label for="telephone">Téléphone</label>
+                <input type="tel" id="telephone" name="telephone" autocomplete="tel" maxlength="30">
+                <p class="field__hint">Facultatif, mais c'est souvent plus rapide.</p>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" autocomplete="email" required maxlength="180">
+              <p class="field__error" id="erreur-email" aria-live="polite"></p>
+            </div>
+
+            <div class="form__row form__row--2">
+              <div class="field">
+                <label for="typeBien">Type de bien <span class="req" aria-hidden="true">*</span></label>
+                <select id="typeBien" name="typeBien" required>
+                  <option value="">Sélectionner…</option>
+                  <option>Villa</option>
+                  <option>Maison</option>
+                  <option>Mas / bastide</option>
+                  <option>Appartement</option>
+                  <option>Autre</option>
+                </select>
+                <p class="field__error" id="erreur-typeBien" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <label for="commune">Commune du bien <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="commune" name="commune" required maxlength="120" placeholder="Ex. Bandol">
+                <p class="field__error" id="erreur-commune" aria-live="polite"></p>
+              </div>
+            </div>
+
+            <div class="form__row form__row--2">
+              <div class="field">
+                <label for="chambres">Nombre de chambres</label>
+                <select id="chambres" name="chambres">
+                  <option value="">Sélectionner…</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5 et plus</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="situation">Où en êtes-vous&nbsp;?</label>
+                <select id="situation" name="situation">
+                  <option value="">Sélectionner…</option>
+                  <option>Je n'ai jamais loué ce bien</option>
+                  <option>Je loue moi-même, je veux déléguer</option>
+                  <option>Je suis déjà avec une conciergerie</option>
+                  <option>Je me renseigne, projet à venir</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="message">Votre message</label>
+              <textarea id="message" name="message" maxlength="2000" placeholder="Piscine, vue mer, période où vous occupez la maison, contraintes particulières… tout ce qui nous aidera à vous répondre précisément."></textarea>
+            </div>
+
+            <div class="field field--check">
+              <input type="checkbox" id="consentement" name="consentement" required>
+              <label for="consentement">
+                J'accepte que mes informations soient utilisées par La Clé Provençale
+                pour répondre à ma demande. Elles ne sont ni revendues ni transmises à
+                des tiers. <a href="/mentions-legales/">En savoir plus</a>.
+              </label>
+              <p class="field__error" id="erreur-consentement" aria-live="polite" style="grid-column: 1 / -1;"></p>
+            </div>
+
+            <!-- Pièges à robots : ne jamais remplir, ne jamais retirer. -->
+            <div class="hp" aria-hidden="true">
+              <label for="societe">Société</label>
+              <input type="text" id="societe" name="societe" tabindex="-1" autocomplete="off">
+            </div>
+            <input type="hidden" id="ouvert-a" name="ouvertA" value="">
+
+            <button class="btn btn--primary btn--block" type="submit">Envoyer ma demande</button>
+
+            <p class="field__hint" style="text-align: center;">
+              Champs marqués d'un <span class="req">*</span> obligatoires.
+            </p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
