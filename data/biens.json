@@ -18,7 +18,20 @@
       "Parking privatif 3 véhicules",
       "Vue mer partielle"
     ],
-    "photos": [],
+    "photos": [
+      {
+        "src": "/assets/img/photos/piscine-vue-mer.webp",
+        "alt": "Villa des Oliviers : la piscine dominant la Méditerranée"
+      },
+      {
+        "src": "/assets/img/photos/terrasse-poteries-mer.webp",
+        "alt": "La terrasse de la Villa des Oliviers, ouverte sur la mer"
+      },
+      {
+        "src": "/assets/img/photos/transat-piscine.webp",
+        "alt": "Transat au bord de la piscine de la Villa des Oliviers"
+      }
+    ],
     "publie": true,
     "source": "exemple",
     "ajouteLe": "2026-07-26"
@@ -42,7 +55,20 @@
       "Boulodrome",
       "Terrain clos 4 000 m²"
     ],
-    "photos": [],
+    "photos": [
+      {
+        "src": "/assets/img/photos/bastide-pins.webp",
+        "alt": "Le Mas de la Lavande sous les pins parasols"
+      },
+      {
+        "src": "/assets/img/photos/mas-pierre-cypres.webp",
+        "alt": "La façade en pierre du Mas de la Lavande bordée de cyprès"
+      },
+      {
+        "src": "/assets/img/photos/jardin-bassin-pierre.webp",
+        "alt": "Le bassin de pierre dans le jardin du Mas de la Lavande"
+      }
+    ],
     "publie": true,
     "source": "exemple",
     "ajouteLe": "2026-07-26"
@@ -66,7 +92,20 @@
       "Lave-linge et sèche-linge",
       "Commerces à pied"
     ],
-    "photos": [],
+    "photos": [
+      {
+        "src": "/assets/img/photos/calanque-maisons.webp",
+        "alt": "Les maisons du bord de mer, à deux pas de la Maison du Port"
+      },
+      {
+        "src": "/assets/img/photos/baie-bateaux.webp",
+        "alt": "La baie et les bateaux, à quelques minutes de la Maison du Port"
+      },
+      {
+        "src": "/assets/img/photos/village-perche.webp",
+        "alt": "Les ruelles du village autour de la Maison du Port"
+      }
+    ],
     "publie": true,
     "source": "exemple",
     "ajouteLe": "2026-07-26"

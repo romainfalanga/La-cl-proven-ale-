@@ -5,6 +5,12 @@
 
 [build.environment]
   NODE_VERSION = "20"
+  # Le scan de secrets de Netlify inspecte la valeur de chaque variable dans les
+  # fichiers publiés et fait échouer le build s'il la retrouve. Ces deux-là sont
+  # des adresses email destinées à être publiques : sans cette exemption, le jour
+  # où CONTACT_TO_EMAIL vaudra contact@lacleprovencale.fr — adresse déjà présente
+  # dans le pied de page — le déploiement casserait.
+  SECRETS_SCAN_OMIT_KEYS = "CONTACT_TO_EMAIL,CONTACT_FROM_EMAIL"
 
 # Le front n'appelle jamais l'API Resend directement : il passe par /api/contact,
 # qui est redirigé vers la Netlify Function où la clé est lue côté serveur.

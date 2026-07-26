@@ -6,14 +6,20 @@
   "path": "/a-propos"
 }
 -->
-  <section class="section" style="padding-top: calc(var(--header-h) + var(--space-xl));">
+  <section class="page-hero">
+    <img class="page-hero__image" src="/assets/img/photos/champ-lavande.webp" alt="" aria-hidden="true"
+         width="1600" height="1067" fetchpriority="high">
     <div class="container container--narrow">
-      <div class="section-header">
+      <div class="section-header" style="margin-bottom: 0;">
         <p class="eyebrow">À propos</p>
         <h1 class="section-title">Une conciergerie à taille humaine</h1>
         <hr class="filet">
       </div>
+    </div>
+  </section>
 
+  <section class="section">
+    <div class="container container--narrow">
       <p class="citation">
         « Je ne voulais pas monter une agence de plus. Je voulais que chaque propriétaire
         sache exactement qui a les clés de sa maison. »
@@ -54,6 +60,12 @@
           chaque bien avant de nous engager.
         </p>
 
+        <figure class="figure" style="margin: var(--space-xl) 0;">
+          <img src="/assets/img/photos/village-perche.webp" alt="Village perché de Provence dominant la vallée"
+               width="1400" height="1050" loading="lazy">
+          <figcaption>Notre terrain de jeu : les villages et les collines de l'arrière-pays varois.</figcaption>
+        </figure>
+
         <h2>Notre territoire</h2>
         <p>
           Nous intervenons sur [zone d'intervention à préciser&nbsp;: Bandol, Sanary-sur-Mer,
@@ -75,7 +87,9 @@
     </div>
   </section>
 
-  <section class="section section--sage">
+  <section class="section section--photo">
+    <img class="section__image" src="/assets/img/photos/baie-bateaux.webp" alt="" aria-hidden="true"
+         width="1400" height="961" loading="lazy">
     <div class="container container--narrow cta-final">
       <p class="eyebrow">Faisons connaissance</p>
       <h2 class="section-title">Le meilleur moyen de nous juger, c'est de nous parler</h2>

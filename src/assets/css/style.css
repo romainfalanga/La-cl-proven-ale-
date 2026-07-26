@@ -435,20 +435,151 @@ body.is-locked { overflow: hidden; }
 /* Rameau d'olivier en filigrane : le motif du logo, agrandi et très pâle. */
 .hero__watermark {
   position: absolute;
-  right: -6%;
+  left: -10%;
   top: 50%;
   transform: translateY(-50%);
-  width: min(560px, 62vw);
-  opacity: 0.05;
+  width: min(520px, 58vw);
+  opacity: 0.04;
   color: var(--sage-600);
   pointer-events: none;
-  -webkit-mask-image: linear-gradient(to left, #000 45%, transparent 100%);
-  mask-image: linear-gradient(to left, #000 45%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, #000 40%, transparent 100%);
+  mask-image: linear-gradient(to right, #000 40%, transparent 100%);
 }
-/* Sur mobile le rameau passe derrière le texte : on l'efface presque. */
-@media (max-width: 860px) {
-  .hero__watermark { right: -22%; width: 70vw; opacity: 0.028; }
+@media (max-width: 860px) { .hero__watermark { opacity: 0.025; } }
+
+/* Colonne photo du hero : la promesse en image, à côté de la promesse en mots. */
+.hero__grid { position: relative; z-index: 2; display: grid; gap: var(--space-xl); align-items: center; }
+@media (min-width: 1000px) { .hero__grid { grid-template-columns: 1fr 0.82fr; gap: var(--space-2xl); } }
+
+.hero__visuel { position: relative; }
+.hero__photo {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
 }
+@media (max-width: 999px) { .hero__photo { aspect-ratio: 16 / 10; } }
+
+/* Vignette en débord : donne de la profondeur sans surcharger. */
+.hero__photo-inset {
+  position: absolute;
+  left: -6%;
+  bottom: -7%;
+  width: 44%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  border: 6px solid var(--paper);
+  box-shadow: var(--shadow-md);
+}
+@media (max-width: 999px) { .hero__photo-inset { display: none; } }
+
+/* ------------------------------------------------------- bandes visuelles */
+
+/* Respiration pleine largeur entre deux sections de texte. */
+.bande {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: clamp(300px, 46vh, 500px);
+  overflow: hidden;
+}
+.bande__image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.bande::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(34, 52, 58, 0.62) 0%, rgba(34, 52, 58, 0.42) 50%, rgba(34, 52, 58, 0.68) 100%);
+}
+.bande__contenu {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+  padding: var(--space-xl) var(--space-md);
+  text-align: center;
+  color: var(--white);
+}
+.bande__contenu .eyebrow { color: var(--gold-400); }
+.bande__titre { font-size: var(--text-2xl); color: var(--white); }
+.bande__texte { margin-top: var(--space-sm); color: rgba(255, 255, 255, 0.86); font-size: var(--text-lg); }
+
+/* Section dont le fond est une photo, recouverte du voile sauge de la marque. */
+.section--photo { position: relative; overflow: hidden; color: var(--white); }
+.section--photo > .section__image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.section--photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(155deg, rgba(34, 52, 58, 0.93) 0%, rgba(51, 71, 78, 0.88) 45%, rgba(71, 101, 110, 0.82) 100%);
+}
+.section--photo > .container { position: relative; z-index: 2; }
+.section--photo h1, .section--photo h2, .section--photo h3 { color: var(--white); }
+.section--photo .eyebrow { color: var(--gold-400); }
+.section--photo .section-lead { color: rgba(255, 255, 255, 0.84); }
+.section--photo .card {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: none;
+}
+.section--photo .card:hover { background: rgba(255, 255, 255, 0.13); }
+.section--photo .card__text { color: rgba(255, 255, 255, 0.8); }
+.section--photo .card__num { color: var(--gold-400); }
+.section--photo .liste-lavande li { color: rgba(255, 255, 255, 0.84); }
+.section--photo .liste-lavande li::before { background: var(--gold-400); }
+.section--photo .btn--ghost { color: var(--white); border-color: rgba(255, 255, 255, 0.42); }
+.section--photo .btn--ghost:hover { background: rgba(255, 255, 255, 0.12); }
+
+/* Photo à peine perceptible derrière une section claire (méthode reprise de
+   la charte du pressing : 3 % d'opacité, zoom très lent). */
+.section--texture { position: relative; overflow: hidden; }
+.section--texture > .section__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.05;
+  animation: zoomLent 32s ease-in-out infinite alternate;
+}
+.section--texture > .container { position: relative; z-index: 1; }
+
+@keyframes zoomLent {
+  from { transform: scale(1); }
+  to   { transform: scale(1.07); }
+}
+
+/* Bandeau d'en-tête des pages intérieures. */
+.page-hero {
+  position: relative;
+  padding-top: calc(var(--header-h) + var(--space-2xl));
+  padding-bottom: var(--space-2xl);
+  overflow: hidden;
+  color: var(--white);
+}
+.page-hero__image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.page-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(150deg, rgba(34, 52, 58, 0.88) 0%, rgba(51, 71, 78, 0.74) 55%, rgba(71, 101, 110, 0.6) 100%);
+}
+.page-hero > .container { position: relative; z-index: 2; }
+.page-hero h1 { color: var(--white); }
+.page-hero .eyebrow { color: var(--gold-400); }
+.page-hero .section-lead { color: rgba(255, 255, 255, 0.86); }
+.page-hero .filet { background: linear-gradient(90deg, var(--gold-400), rgba(194, 164, 106, 0)); }
+
+/* Photo d'illustration dans une colonne de texte. */
+.figure { margin: 0; }
+.figure img { width: 100%; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
+.figure figcaption {
+  margin-top: var(--space-xs);
+  font-size: var(--text-xs);
+  color: var(--ink-soft);
+  letter-spacing: 0.04em;
+}
+.figure--portrait img { aspect-ratio: 3 / 4; object-fit: cover; }
 
 /* Arc doré : reprise directe de l'arc partiel du logo. */
 .hero__arc {

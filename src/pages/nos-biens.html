@@ -6,9 +6,11 @@
   "path": "/nos-biens"
 }
 -->
-  <section class="section" style="padding-top: calc(var(--header-h) + var(--space-xl)); padding-bottom: var(--space-lg);">
+  <section class="page-hero">
+    <img class="page-hero__image" src="/assets/img/photos/calanque-maisons.webp" alt="" aria-hidden="true"
+         width="1400" height="1050" fetchpriority="high">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header" style="margin-bottom: 0;">
         <p class="eyebrow">Notre portefeuille</p>
         <h1 class="section-title">Les maisons dont nous avons les clés</h1>
         <hr class="filet">
@@ -21,7 +23,7 @@
     </div>
   </section>
 
-  <section class="section" style="padding-top: 0;">
+  <section class="section" style="padding-block: var(--space-2xl);">
     <div class="container">
       <div class="biens-grid">
         {{GRILLE_BIENS}}

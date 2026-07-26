@@ -10,7 +10,7 @@
     <div class="hero__arc" aria-hidden="true"></div>
     <div class="hero__watermark" aria-hidden="true">{{OLIVIER}}</div>
 
-    <div class="container">
+    <div class="container hero__grid">
       <div class="hero__inner">
         <p class="eyebrow">Conciergerie de villas &amp; maisons · Provence</p>
         <h1 class="hero__title">
@@ -42,6 +42,17 @@
             Réponse sous 24&nbsp;h
           </li>
         </ul>
+      </div>
+
+      <div class="hero__visuel">
+        <img class="hero__photo" src="/assets/img/photos/piscine-vue-mer.webp"
+             srcset="/assets/img/photos/piscine-vue-mer-900.webp 900w, /assets/img/photos/piscine-vue-mer.webp 1600w"
+             sizes="(min-width: 1000px) 42vw, 92vw"
+             alt="Piscine d'une villa dominant la Méditerranée, à l'ombre d'un pin parasol"
+             width="1600" height="1813" fetchpriority="high">
+        <img class="hero__photo-inset" src="/assets/img/photos/transat-piscine.webp"
+             alt="Transat au bord d'une piscine en fin de journée"
+             width="1400" height="2099" loading="lazy">
       </div>
     </div>
   </section>
@@ -96,8 +107,24 @@
     </div>
   </section>
 
+  <!-- ================================================================ BANDE -->
+  <section class="bande">
+    <img class="bande__image" src="/assets/img/photos/provence-coucher-soleil.webp"
+         alt="Coucher de soleil sur les collines de Provence, piscine au premier plan"
+         width="1800" height="1012" loading="lazy">
+    <div class="bande__contenu">
+      <p class="eyebrow">Ce que nous vous rendons</p>
+      <p class="bande__titre">Vos étés, vos week-ends, et l'esprit tranquille</p>
+      <p class="bande__texte">
+        Votre maison travaille. Vous, vous en profitez.
+      </p>
+    </div>
+  </section>
+
   <!-- ======================================================== NOS PRESTATIONS -->
-  <section class="section section--paper">
+  <section class="section section--paper section--texture">
+    <img class="section__image" src="/assets/img/photos/mas-pins-parasols.webp" alt="" aria-hidden="true"
+         width="1600" height="1067" loading="lazy">
     <div class="container">
       <div class="section-header reveal">
         <p class="eyebrow">Notre rôle</p>
@@ -206,11 +233,28 @@
           </p>
         </div>
       </div>
+
+      <div class="grid grid--3 reveal" style="margin-top: var(--space-2xl);">
+        <figure class="figure">
+          <img src="/assets/img/photos/terrasse-poteries-mer.webp" alt="Terrasse en poteries provençales ouverte sur la mer"
+               width="1600" height="1067" loading="lazy" style="aspect-ratio: 4/5; object-fit: cover;">
+        </figure>
+        <figure class="figure">
+          <img src="/assets/img/photos/bastide-pins.webp" alt="Bastide provençale entourée de pins parasols"
+               width="1400" height="933" loading="lazy" style="aspect-ratio: 4/5; object-fit: cover;">
+        </figure>
+        <figure class="figure">
+          <img src="/assets/img/photos/jardin-bassin-pierre.webp" alt="Jardin méditerranéen et bassin de pierre"
+               width="1400" height="933" loading="lazy" style="aspect-ratio: 4/5; object-fit: cover;">
+        </figure>
+      </div>
     </div>
   </section>
 
   <!-- =============================================================== ENGAGEMENT -->
-  <section class="section section--sage">
+  <section class="section section--photo">
+    <img class="section__image" src="/assets/img/photos/villa-toit-rouge-mer.webp" alt="" aria-hidden="true"
+         width="1800" height="1088" loading="lazy">
     <div class="container">
       <div class="grid grid--2" style="gap: var(--space-xl); align-items: center;">
         <div class="reveal">
@@ -297,7 +341,9 @@
   </section>
 
   <!-- ============================================================== CTA FINAL -->
-  <section class="section section--paper">
+  <section class="section section--photo">
+    <img class="section__image" src="/assets/img/photos/terrasse-infinie-crepuscule.webp" alt="" aria-hidden="true"
+         width="1800" height="2250" loading="lazy">
     <div class="container container--narrow cta-final reveal">
       <p class="eyebrow">Première étape</p>
       <h2 class="section-title">Découvrons ce que votre maison peut vraiment rapporter</h2>
@@ -307,7 +353,7 @@
         ouvrées avec une première analyse — sans engagement, et sans discours commercial.
       </p>
       <div class="btn-row" style="justify-content: center; margin-top: var(--space-lg);">
-        <a class="btn btn--primary" href="/contact/">Faire étudier mon bien</a>
+        <a class="btn btn--gold" href="/contact/">Faire étudier mon bien</a>
       </div>
     </div>
   </section>
