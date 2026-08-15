@@ -160,7 +160,7 @@ export default async (req) => {
 <html lang="fr"><body style="margin:0;padding:24px;background:#FAF8F3;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
   <div style="max-width:600px;margin:0 auto;background:#FFFFFF;border:1px solid #E4DFD5;border-radius:14px;overflow:hidden;">
     <div style="padding:20px 28px;background:#33474E;">
-      <p style="margin:0;color:#C2A46A;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;">La Clé Provençale</p>
+      <p style="margin:0;color:#C2A46A;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;">Passala Conciergerie</p>
       <p style="margin:6px 0 0;color:#FFFFFF;font-size:19px;">Nouvelle demande de propriétaire</p>
     </div>
 
@@ -190,13 +190,13 @@ export default async (req) => {
     </div>
 
     <div style="padding:14px 28px;background:#F4F1E9;color:#7B8C91;font-size:11px;">
-      Reçu via le formulaire de lacleprovencale.fr — ${new Date().toLocaleString('fr-FR', { timeZone: 'Europe/Paris' })}
+      Reçu via le formulaire du site Passala Conciergerie — ${new Date().toLocaleString('fr-FR', { timeZone: 'Europe/Paris' })}
     </div>
   </div>
 </body></html>`
 
   const texte = [
-    'Nouvelle demande de propriétaire — La Clé Provençale',
+    'Nouvelle demande de propriétaire — Passala Conciergerie',
     '',
     `Nom : ${champs.nom}`,
     `Email : ${champs.email}`,

@@ -1,4 +1,4 @@
-/* La Clé Provençale — comportements d'interface.
+/* Passala Conciergerie — comportements d'interface.
    Volontairement minimal : pas de librairie, pas de dépendance. */
 
 (() => {

@@ -1,8 +1,8 @@
 {
-  "name": "la-cle-provencale",
+  "name": "passala-conciergerie",
   "version": "0.1.0",
   "private": true,
-  "description": "Site vitrine de La Clé Provençale — conciergerie de locations saisonnières en Provence",
+  "description": "Site vitrine de Passala Conciergerie — conciergerie de locations saisonnières en Provence",
   "type": "module",
   "scripts": {
     "build": "node build.js",

@@ -1,6 +1,6 @@
-# La Clé Provençale — site vitrine
+# Passala Conciergerie — site vitrine
 
-Site vitrine de la conciergerie **La Clé Provençale**, orienté acquisition de
+Site vitrine de **Passala Conciergerie**, conciergerie orientée acquisition de
 propriétaires de maisons et de villas en Provence.
 
 Générateur statique maison, sans dépendance : **Node 20 suffit**. Pas de
@@ -71,8 +71,8 @@ apparaître dans le dépôt (voir `.env.example`).
 `CONTACT_FROM_EMAIL` doit appartenir à un **domaine vérifié dans Resend**.
 Aujourd'hui, le seul domaine vérifié du compte est `lavabio.fr` : le site est
 donc configuré pour partir de `contact@lavabio.fr` avec un `reply_to` pointant
-sur l'email du prospect. Dès que `lacleprovencale.fr` sera vérifié dans Resend,
-il suffira de changer cette variable — aucun code à modifier.
+sur l'email du prospect. Dès que le domaine définitif de la marque sera vérifié
+dans Resend, il suffira de changer cette variable — aucun code à modifier.
 
 ## Sécurité
 
@@ -89,9 +89,13 @@ il suffira de changer cette variable — aucun code à modifier.
 
 ## Points restant à traiter
 
-- [ ] Orthographe de la marque : le logo écrit « LA CLEF PROVENÇALE », le site
-      utilise « La Clé Provençale ». À trancher.
-- [ ] Remplacer le logo SVG reconstitué par le fichier vectoriel d'origine.
+- [ ] **Domaine et adresse email.** Le site s'appelle désormais Passala
+      Conciergerie, mais l'adresse affichée reste `contact@lacleprovencale.fr`
+      (pied de page, contact, mentions légales, messages d'erreur du
+      formulaire) et l'URL de repli du build pointe encore sur
+      `lacleprovencale.netlify.app`. À remplacer dès que le domaine définitif
+      est arrêté — c'est une décision, pas un oubli : inventer une adresse
+      couperait le seul canal de contact du site.
 - [ ] Contenus provisoires signalés par un badge sur `/a-propos/` et
       `/mentions-legales/` (identité du dirigeant, SIRET, zone d'intervention).
 - [ ] Les trois biens de `data/biens.json` sont des exemples : à remplacer par
