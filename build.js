@@ -1,5 +1,5 @@
 /**
- * Générateur statique de La Clé Provençale.
+ * Générateur statique de Passala Conciergerie.
  *
  * Aucune dépendance : Node 20+ suffit. Le principe est volontairement simple —
  * des pages HTML dans src/pages, des morceaux communs dans src/partials, et
@@ -10,7 +10,7 @@
  * d'un bien possible plus tard : il suffira d'ajouter une entrée au JSON.
  */
 
-import { readFileSync, writeFileSync, mkdirSync, cpSync, readdirSync, existsSync, rmSync } from 'node:fs'
+import { readFileSync, writeFileSync, mkdirSync, cpSync, copyFileSync, readdirSync, existsSync, rmSync } from 'node:fs'
 import { join, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -19,7 +19,7 @@ const SRC = join(ROOT, 'src')
 const DIST = join(ROOT, 'dist')
 
 const SITE_URL = process.env.URL || 'https://lacleprovencale.netlify.app'
-const SITE_NAME = 'La Clé Provençale'
+const SITE_NAME = 'Passala Conciergerie'
 
 /**
  * Le site reste en préparation tant que SITE_PUBLIC ne vaut pas "true".
@@ -68,6 +68,7 @@ function applyLayout(body, meta) {
     .replaceAll('{{TITLE}}', esc(meta.title || SITE_NAME))
     .replaceAll('{{DESCRIPTION}}', esc(meta.description || ''))
     .replaceAll('{{CANONICAL}}', SITE_URL + (meta.path || '/'))
+    .replaceAll('{{OG_IMAGE}}', `${SITE_URL}/assets/img/og-passala.png`)
     .replaceAll('{{BODY_CLASS}}', meta.bodyClass || '')
     .replaceAll('{{HEADER}}', activeHeader)
     .replaceAll('{{FOOTER}}', footer)
@@ -141,7 +142,7 @@ function pageBien(b) {
     b.source === 'exemple'
       ? `<div class="container"><p class="avis-exemple">
            <strong>Exemple de présentation.</strong> Ce bien illustre la mise en page d'une fiche.
-           Il ne fait pas partie des biens gérés par La Clé Provençale : le descriptif, les tarifs
+           Il ne fait pas partie des biens gérés par Passala Conciergerie : le descriptif, les tarifs
            et les photographies sont fictifs.
          </p></div>`
       : ''
@@ -216,6 +217,9 @@ for (const b of publies) {
 
 // Assets
 cpSync(join(SRC, 'assets'), join(DIST, 'assets'), { recursive: true })
+
+// Les navigateurs réclament /favicon.ico à la racine sans passer par le <link>.
+copyFileSync(join(SRC, 'assets', 'img', 'favicon.ico'), join(DIST, 'favicon.ico'))
 
 // Sitemap + robots
 const urls = [

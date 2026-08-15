@@ -1,12 +1,12 @@
 /* ==========================================================================
-   LA CLÉ PROVENÇALE — Système de design
+   PASSALA CONCIERGERIE — Système de design
    --------------------------------------------------------------------------
    Méthode reprise de la charte du pressing (tokens :root, échelle
    d'espacements, ombres, transitions, nav glassmorphism, apparitions au
    scroll, mobile-first, prefers-reduced-motion).
-   Palette et matière reprises du logo : sauge bleutée, ocre doré, lavande,
-   papier blanc cassé. Aucun vert écologique, aucun bleu azur : l'identité
-   est propre à La Clé Provençale.
+   Palette : sauge bleutée, ocre doré, lavande, papier blanc cassé, et le
+   marine du logo sur lequel la clé dorée se détache. Aucun vert écologique,
+   aucun bleu azur : l'identité est propre à Passala Conciergerie.
    ========================================================================== */
 
 :root {
@@ -36,6 +36,9 @@
   --lavande-500: #7B5FA8;
   --lavande-300: #A98FC9;
   --lavande-100: #E9E1F3;
+
+  /* — Marine : le fond du logo. Réservé au bloc de marque — */
+  --marine-900: #0A1E37;
 
   /* — Papier — */
   --paper:      #FAF8F3;
@@ -311,7 +314,13 @@ h1, h2, h3, h4 {
 }
 
 .brand { display: flex; align-items: center; gap: 0.7rem; }
-.brand__mark { width: 42px; height: 42px; flex: none; }
+/* La clé du logo, sur le marine d'origine : une vignette assumée plutôt qu'une
+   image détourée — le marine tranche franchement sur le papier du bandeau. */
+.brand__mark {
+  width: 42px; height: 42px; flex: none;
+  border-radius: 10px;
+  border: 1px solid rgba(194, 164, 106, 0.32);
+}
 .brand__text { display: flex; flex-direction: column; line-height: 1.05; }
 .brand__name {
   font-family: var(--font-body);
@@ -1008,8 +1017,9 @@ body.is-locked { overflow: hidden; }
 .footer a { transition: color var(--t-fast); }
 .footer a:hover { color: var(--white); }
 .footer li { margin-bottom: 0.55rem; }
-.footer .brand__name { color: var(--white); }
-.footer .brand__sub { color: var(--sage-400); }
+/* Le pied de page est le seul fond assez sombre pour porter le logo complet,
+   détouré : lettrage crème, clé et rameau dorés, épi de lavande. */
+.footer__logo { width: 236px; max-width: 100%; height: auto; }
 .footer__baseline { margin-top: var(--space-sm); max-width: 38ch; line-height: 1.7; }
 .footer__bottom {
   display: flex; flex-wrap: wrap; gap: var(--space-sm);
